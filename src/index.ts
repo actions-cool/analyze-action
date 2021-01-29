@@ -8,10 +8,15 @@ const ifCount = (owner: string, countOfficial: boolean) => {
   return result;
 };
 
-export type ACTION = {
+export type ACTION_TYPE = {
   owner: string;
   repo: string;
   version: string;
+};
+
+export type RESULT_TYPE = {
+  name: string;
+  actions: ACTION_TYPE[];
 };
 
 /**
@@ -20,11 +25,10 @@ export type ACTION = {
  */
 const analyzeActionYml = (param: string, countOfficial = true) => {
   const params: string[] = param.split(/\r\n|\n/g);
-  const result = {
+  const result: RESULT_TYPE = {
     name: '',
     actions: [],
   };
-  const arrTemp: Array<ACTION> = [];
   params.forEach(item => {
     if (item && item.startsWith('name:')) {
       result.name = item.replace(/'|"|name:/g, '').trim();
@@ -35,7 +39,7 @@ const analyzeActionYml = (param: string, countOfficial = true) => {
       const actionArr = arr[0].split('/');
       const version = arr[1];
       if (actionArr.length === 2 && ifCount(actionArr[0].trim(), countOfficial)) {
-        arrTemp.push({
+        result.actions.push({
           owner: actionArr[0].trim(),
           repo: actionArr[1].trim(),
           version,
