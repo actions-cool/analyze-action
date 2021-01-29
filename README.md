@@ -3,6 +3,7 @@
 After you request action.yml data through axios, it will help you analyze the obtained string and get the action information.
 
 [![npm](https://img.shields.io/npm/v/analyze-action?style=flat-square&color=orange)](https://www.npmjs.com/package/analyze-action)
+![](https://img.shields.io/github/workflow/status/actions-cool/analyze-action/CI?style=flat-square)
 ![](https://img.shields.io/npm/l/analyze-action?style=flat-square&color=blue)
 
 ## 🚀 Usage

@@ -40,7 +40,8 @@
     "@umijs/fabric": "^2.5.6",
     "eslint": "^7.18.0",
     "father-build": "^1.19.1",
-    "np": "^7.2.0"
+    "np": "^7.2.0",
+    "prettier": "^2.2.1"
   },
   "dependencies": {
     "@babel/runtime": "^7.12.5"
