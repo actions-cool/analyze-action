@@ -10,7 +10,8 @@
     "format": "prettier --write src/*.ts",
     "format-check": "prettier --check src/*.ts",
     "lint": "eslint src/*.ts",
-    "prepublishOnly": "npm run build && np --yolo --no-publish"
+    "prepublishOnly": "npm run build && np --yolo --no-publish",
+    "all": "yarn format-check && yarn lint && yarn build"
   },
   "author": "xrkffgg",
   "homepage": "https://github.com/actions-cool/analyze-action",
